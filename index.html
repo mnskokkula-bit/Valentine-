@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Valentine’s Day 💖</title>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins&display=swap" rel="stylesheet">
+<body>
+
+<!-- 🔐 PASSWORD SCREEN START -->
+<div id="lockScreen" style="
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    font-family: 'Poppins', sans-serif;
+">
+    <div style="
+        background: white;
+        padding: 35px;
+        border-radius: 20px;
+        text-align: center;
+        max-width: 320px;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    ">
+        <h2 style="
+            font-family: 'Great Vibes', cursive;
+            color: #e91e63;
+            font-size: 36px;
+        ">My Love 💖</h2>
+
+        <p style="color:#555;">
+            This surprise is only for you 🫂💋<br>
+            Enter the password to unlock my heart 💕
+        </p>
+
+        <input type="password" id="passwordInput" placeholder="Enter password 💌"
+        style="width:100%; padding:12px; border-radius:20px; border:1px solid #ccc; text-align:center;">
+
+        <button onclick="checkPassword()" style="
+            margin-top:15px;
+            padding:10px 25px;
+            border:none;
+            border-radius:20px;
+            background:#e91e63;
+            color:white;
+        ">Unlock 💖</button>
+
+        <p id="errorMsg" style="display:none; color:red; font-size:13px;">
+            Wrong password 😢 (Hint: something we are… forever 💞)
+        </p>
+    </div>
+</div>
+
+<script>
+function checkPassword() {
+    var correctPassword = "I love you"; // 🔑 CHANGE PASSWORD HERE
+    var entered = document.getElementById("passwordInput").value;
+
+    if (entered === correctPassword) {
+        document.getElementById("lockScreen").style.display = "none";
+    } else {
+        document.getElementById("errorMsg").style.display = "block";
+    }
+}
+</script>
+<!-- 🔐 PASSWORD SCREEN END -->
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+}
+
+.slide {
+    background: rgba(255,255,255,0.95);
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 420px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+    display: none;
+    animation: fadeIn 1.5s ease;
+}
+
+.slide.active {
+    display: block;
+}
+
+h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 44px;
+    color: #e91e63;
+}
+
+.quote {
+    font-style: italic;
+    color: #777;
+    margin: 15px 0;
+}
+
+p {
+    color: #444;
+    font-size: 16px;
+}
+
+.buttons button {
+    padding: 12px 25px;
+    margin: 10px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.yes {
+    background: #e91e63;
+    color: white;
+}
+
+.no {
+    background: #ccc;
+}
+
+.angry {
+    font-size: 50px;
+    margin-top: 15px;
+    animation: shake 0.5s;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+@keyframes shake {
+    0% {transform: translateX(0);}
+    25% {transform: translateX(-5px);}
+    50% {transform: translateX(5px);}
+    75% {transform: translateX(-5px);}
+    100% {transform: translateX(0);}
+}
+</style>
+</head>
+
+<body>
+
+<audio autoplay loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mpeg">
+</audio>
+
+<div class="slide active">
+    <h1>Hey My Love 💕</h1>
+    <p class="quote">“Distance means nothing when someone means everything.”</p>
+    <p>
+        You walked into my life and changed everything 🌸  
+        My heart beats a little happier because of you 💓  
+        My soul feels safe in your love 🫂💋
+    </p>
+    <button class="yes" onclick="nextSlide()">Next 💖</button>
+</div>
+
+<div class="slide">
+    <h1>Question 1 💭</h1>
+    <p class="quote">“Love isn’t perfect, but it’s always worth choosing.”</p>
+    <p>Do you feel loved and cared for when you think about us? 🥺💖</p>
+    <div class="buttons">
+        <button class="yes" onclick="nextSlide()">Yes 💕</button>
+        <button class="no" onclick="showAngry(this)">No 🙈</button>
+    </div>
+</div>
+
+<div class="slide">
+    <h1>Question 2 💞</h1>
+    <p class="quote">“Every hug from you feels like coming home.”</p>
+    <p>Can I keep giving you endless hugs & kisses? 🤗💋</p>
+    <div class="buttons">
+        <button class="yes" onclick="nextSlide()">Yes 😍</button>
+        <button class="no" onclick="showAngry(this)">No 😶</button>
+    </div>
+</div>
+
+<div class="slide">
+    <h1>Question 3 💘</h1>
+    <p class="quote">“Forever sounds perfect when it’s with you.”</p>
+    <p>Will you be my Valentine today, tomorrow, and always? 💍❤️</p>
+    <div class="buttons">
+        <button class="yes" onclick="nextSlide()">YES 💖</button>
+        <button class="no" onclick="showAngry(this)">No 😅</button>
+    </div>
+</div>
+
+<!-- Distance Question 1 -->
+<div class="slide">
+    <h1>Question 4 🌍</h1>
+    <p class="quote">“Distance teaches us the value of presence.”</p>
+    <p>
+        Even though we are miles apart,  
+        do you still feel my love with you every day? 🫂❤️
+    </p>
+    <div class="buttons">
+        <button class="yes" onclick="nextSlide()">Yes 💖</button>
+        <button class="no" onclick="showAngry(this)">No 😔</button>
+    </div>
+</div>
+
+<!-- Distance Question 2 -->
+<div class="slide">
+    <h1>Question 5 💌</h1>
+    <p class="quote">“True love survives every distance.”</p>
+    <p>
+        Will you keep holding my heart close,  
+        no matter how far life places us apart? 🌙💞
+    </p>
+    <div class="buttons">
+        <button class="yes" onclick="nextSlide()">Always 💘</button>
+        <button class="no" onclick="showAngry(this)">No 😢</button>
+    </div>
+</div>
+
+<div class="slide">
+    <h1>My Promise 💖</h1>
+    <p class="quote">“Real love stays, even when life gets hard.”</p>
+    <p>
+        I promise to stand by you in every situation —  
+        in happiness and sadness,  
+        in success and struggle,  
+        in silence and chaos.  
+        <br><br>
+        <strong>Whatever comes our way, I will be there.</strong> 🫂❤️
+    </p>
+    <button class="yes" onclick="nextSlide()">Next 💞</button>
+</div>
+
+<div class="slide">
+    <h1>Happy Valentine’s Day 💐</h1>
+    <p>
+        Happy Valentine’s Day, my love 💖  
+        You are my today, my tomorrow,  
+        and my forever 🫂💋  
+        I love you endlessly 🌹
+    </p>
+    <p style="font-size:30px;">💖💖💖</p>
+</div>
+
+<script>
+let current = 0;
+const slides = document.querySelectorAll(".slide");
+
+function nextSlide() {
+    slides[current].classList.remove("active");
+    current++;
+    slides[current].classList.add("active");
+}
+
+function showAngry(btn) {
+    if (!btn.parentElement.querySelector(".angry")) {
+        const angry = document.createElement("div");
+        angry.className = "angry";
+        angry.innerText = "🧸😡";
+        btn.parentElement.appendChild(angry);
+    }
+}
+</script>
+
+</body>
+</html>
